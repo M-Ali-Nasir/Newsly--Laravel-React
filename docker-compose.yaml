@@ -1,0 +1,43 @@
+
+
+services:
+  # Laravel and Inertia (React) Service
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: laravel_inertia_app
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - .:/var/www
+    ports:
+      - "9000:9000"
+    networks:
+      - app-network
+    depends_on:
+      - db
+
+  # MySQL Database Service
+  db:
+    image: mysql:5.7
+    container_name: mysql_db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: laravel_db
+      MYSQL_ROOT_PASSWORD: password  # Set the root password here
+    ports:
+      - "3306:3306"  # Or any other port you configured earlier
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - app-network
+
+# Volumes
+volumes:
+  db_data:
+
+# Networks
+networks:
+  app-network:
+    driver: bridge
