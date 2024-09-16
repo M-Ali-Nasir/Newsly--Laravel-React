@@ -27,7 +27,7 @@ Follow these steps to get the project up and running on your local machine.
 ### 1. Clone the Repository
 
 bash
-git clone https://github.com/yourusername/yourprojectname.git
+git clone github.com/M-Ali-Nasir/Newsly--Laravel-React.git
 cd yourprojectname
 2. Set Environment Variables
 Create a .env file in the root of the project and add the following variables. Replace your_api_key with your actual API keys:
