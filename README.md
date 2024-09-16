@@ -9,7 +9,7 @@
 
 
 
-# My Laravel Inertia Project
+# Newsly (My Laravel Inertia Project)
 
 A Laravel project using Inertia.js and React for the frontend. This project allows you to quickly set up and run the application on your local environment.
 
